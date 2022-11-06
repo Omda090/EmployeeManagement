@@ -1,0 +1,37 @@
+<div class="card p-5">
+  <h3>Create Employee</h3>
+  <form #formEmployee="ngForm" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">fullName</label>
+      <input type="text" name="fullName" #fullName="ngModel" [(ngModel)]="employeeData.fullName" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">branch</label>
+      <input type="text" name="branch" #branch="ngModel" [(ngModel)]="employeeData.branch"  class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">jobTitle</label>
+      <input type="text" name="jobTitle" #jobTitle="ngModel" [(ngModel)]="employeeData.jobTitle"  class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">salary</label>
+      <input type="number" name="salary" #salary="ngModel" [(ngModel)]="employeeData.salary"  class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">phone</label>
+      <input type="number" name="phone" #phone="ngModel" [(ngModel)]="employeeData.phone"  class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">gender</label>
+      <select id="inputState" name="gender" #gender="ngModel" [(ngModel)]="employeeData.gender"  class="form-select">
+        <option selected>Choose...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <button (click)="onSave(formEmployee)" class="btn btn-success">Create</button>
+    </div>
+  </form>
+</div>
