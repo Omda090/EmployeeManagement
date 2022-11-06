@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { Employee } from 'src/Shared/models/employee.model';
+import { Employee } from '../../../Shared/models/Employee.model';
+
 import { SharedService } from 'src/Shared/Services/shared.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class UpdateEmployeeComponent implements OnInit {
   employeeData : Employee = new Employee();
    id:any;
 
-  constructor(public service:SharedService,public route:ActivatedRoute,private toastr: ToastrService) { }
+  constructor(public service:SharedService,public route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
@@ -35,13 +35,13 @@ export class UpdateEmployeeComponent implements OnInit {
 
   }
   onUpdate(UpdateEmployee:NgForm) {
-    return this.service.UpdateEmpolyee(UpdateEmployee,UpdateEmployee.value.id).subscribe(response => {
-   ;
-
-
+    return this.service.UpdateEmpolyee(UpdateEmployee.value,UpdateEmployee.value.id).subscribe(response => {
+   alert("Updated Succefully")
 
       },
-      error => {error}
+      error => {
+        alert("not Updated .. !")
+      }
     );
   }
 }

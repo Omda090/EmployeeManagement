@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { Employee } from 'src/Shared/models/employee.model';
+import { ActivatedRoute, Router } from '@angular/router';
+// import { Employee } from 'src/Shared/models/employee.model';
+import { Employee } from '../../../Shared/models/Employee.model';
+
 
 import { SharedService } from 'src/Shared/Services/shared.service';
 
@@ -14,7 +15,7 @@ import { SharedService } from 'src/Shared/Services/shared.service';
 export class DeleteEmployeeComponent implements OnInit {
   employeeData : Employee = new Employee();
   id:any;
-  constructor(public service:SharedService,public route:ActivatedRoute,private toastr: ToastrService) { }
+  constructor(public service:SharedService,public route:ActivatedRoute,private navigation:Router){ }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
@@ -40,7 +41,7 @@ export class DeleteEmployeeComponent implements OnInit {
     return this.service.deleteEmpolyee(UpdateEmployee.value.id).subscribe(
       respo => {
         alert('employee delete')
-
+      this.navigation.navigateByUrl("employees")
 
       },
       error => {  alert('sothing went wrong') }

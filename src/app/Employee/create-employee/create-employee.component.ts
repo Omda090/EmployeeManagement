@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Employee } from 'src/Shared/models/employee.model';
+import { Employee } from '../../../Shared/models/Employee.model';
+// import { Employee } from 'src/Shared/models/employee.model';
 
 
 

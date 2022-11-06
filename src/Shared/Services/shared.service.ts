@@ -34,10 +34,10 @@ import { JwtHelperService } from "@auth0/angular-jwt";
       addEmpolyeeResponse(form: any) {
         console.log('Error ' ,form.value);
 
-        return this.http.post(this.baseURL + "Employee/CreateEmployee", form);
+        return this.http.post(this.baseURL + "Employee/CreateEmployee", form ,{ responseType: "blob" });
       }
       deleteEmpolyee(id: any) {
-        return this.http.delete(this.baseURL + "Employee/DeleteEmployee/?id=" + id);
+        return this.http.delete(this.baseURL + "Employee/DeleteEmployee/" + id ,{ responseType: "text" });
       }
       UpdateEmpolyee(form: any, id: any) {
         return this.http.put(this.baseURL + "Employee/UpdateEmployee/" + id, form, { responseType: "blob" });
