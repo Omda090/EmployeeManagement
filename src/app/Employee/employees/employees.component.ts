@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Employee } from 'src/Shared/models/employee.model';
+import { Employee } from '../../../Shared/models/Employee.model';
 import { SharedService } from 'src/Shared/Services/shared.service';
 
 @Component({

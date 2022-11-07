@@ -3,7 +3,6 @@ export class Employee {
   fullName :string = "";
   branch :string = "";
   jobTitle :string = "";
-  phone :string = "";
-  gender :string = "";
-  salary : number = 0;
+  PhoneNo :number =0;
+
 }

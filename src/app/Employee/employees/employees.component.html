@@ -9,8 +9,7 @@
               <tr class="text-center mt-2">
                   <th>employee Id</th>
                   <th>name </th>
-                  <th>salary</th>
-                  <th>gender</th>
+
                   <th>branch</th>
                   <th>jobTitle</th>
                   <th>phone</th>
@@ -23,11 +22,10 @@
               <tr *ngFor="let employee of employeeDetails" class="text-center animated fadeIn">
                   <td>{{employee.id}}</td>
                   <td>{{employee.fullName}}</td>
-                   <td>{{employee.salary}}</td>
-                  <td>{{employee.gender}}</td>
+
                   <td>{{employee.branch}}</td>
                   <td>{{employee.jobTitle}}</td>
-                  <td>{{employee.phone}}</td>
+                  <td>{{employee.PhoneNo}}</td>
                   <td><button class="btn btn-success  p-1 h-50" [routerLink]="['/UpdateEmployee/' + employee.id]"><i class="fa fa-pencil-square"></i> </button></td>
                   <td><button class="btn btn-danger  p-1 h-50" [routerLink]="['/DeleteEmployee/' + employee.id]"><i class="fa fa-trash" ></i> </button></td>
                   <!-- <td><button class="btn btn-danger  p-1 h-50" /*(click)="IdDelete.value = city.id; confirm.show()"><i class="fa fa-trash" ></i> </button></td> -->

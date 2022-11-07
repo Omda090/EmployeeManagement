@@ -19,7 +19,7 @@
     </div> -->
     <div class="col-md-6">
       <label for="inputCity" class="form-label">phone</label>
-      <input type="number" name="phone" #phone="ngModel" [(ngModel)]="employeeData.phone"  class="form-control" id="inputCity">
+      <input type="number" name="phone" #phone="ngModel" [(ngModel)]="employeeData.PhoneNo"  class="form-control" id="inputCity">
     </div>
     <!-- <div class="col-md-4">
       <label for="inputState" class="form-label">gender</label>
@@ -31,8 +31,8 @@
     </div> -->
 
     <div class="col-md-6">
-      <label for="id" class="form-label">fullName</label>
-      <input type="text" name="id" #id="ngModel" [(ngModel)]="employeeData.id" class="form-control" id="id">
+      <label for="id" class="form-label" hidden>fullName</label>
+      <input hidden type="text" name="id" #id="ngModel" [(ngModel)]="employeeData.id" class="form-control" id="id">
     </div>
     <!-- <div class="col-md-2">
       <label for="inputZip" class="form-label">Zip</label>
